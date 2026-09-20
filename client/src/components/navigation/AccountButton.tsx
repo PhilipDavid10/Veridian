@@ -1,6 +1,11 @@
-function AccountButton(){
+import { UserRound } from "lucide-react"
+import "./IconButton.css"
+
+function AccountButton(){   
     return(
-        <button>Account Button</button>
+        <button className="icon-button">
+            <UserRound />
+        </button>
     );
 }
 

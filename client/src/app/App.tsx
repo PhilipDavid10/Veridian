@@ -1,10 +1,10 @@
 import SideNavBar from "../components/layout/SideNavBar";
-import TopNavBar from "../components/layout/TopNavBar";
+import Header from "../components/layout/Header";
 
 function App() {
     return (
         <>
-        <TopNavBar />
+        <Header />
         <SideNavBar />
         </>
     );
