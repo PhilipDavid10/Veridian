@@ -1,12 +1,8 @@
-import SideNavBar from "../components/layout/SideNavBar";
-import Header from "../components/layout/Header";
+import AppLayout from "../components/layout/AppLayout";
 
 function App() {
     return (
-        <>
-        <Header />
-        <SideNavBar />
-        </>
+        <AppLayout />
     );
 }
 
