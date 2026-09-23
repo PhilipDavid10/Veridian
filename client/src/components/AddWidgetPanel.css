@@ -6,8 +6,10 @@
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: 3rem;
-    margin-top: auto;
 
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .widget-panel{
