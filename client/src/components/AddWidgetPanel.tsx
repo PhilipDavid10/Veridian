@@ -1,7 +1,11 @@
 import { Cloud, ListTodo } from "lucide-react";
 import "./AddWidgetPanel.css"
 
-export default function AddWidgetPanel(){
+type AddWidgetPanelProps = {
+    loadWidget: (widgetName: string) => void;
+};
+
+export default function AddWidgetPanel({ loadWidget} : AddWidgetPanelProps){
 
     const widgetOptions = [
         {
@@ -24,7 +28,7 @@ export default function AddWidgetPanel(){
                 {widgetOptions.map(option => {
                     return(
                         <>
-                            <button className="widget-option">
+                            <button className="widget-option" onClick={() => loadWidget(option.name)}>
                                 <div className="widget-header">
                                     <option.icon className="widget-icon"/>
                                     <span> {option.name} </span>

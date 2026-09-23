@@ -3,7 +3,11 @@ import "./AddButton.css";
 import { useState } from "react"
 import AddWidgetPanel from "./AddWidgetPanel";
 
-function AddButton(){
+type AddButtonProps = {
+    loadWidget: (widgetName: string) => void;
+};
+
+function AddButton({ loadWidget }: AddButtonProps){
     const[showWidgetPanel,setShowWidgetPanel] = useState(false);
 
     function handleClick(){
@@ -16,7 +20,7 @@ function AddButton(){
                 <button className="add-button" onClick={handleClick}>
                     <Plus />
                 </button>
-                {showWidgetPanel && <AddWidgetPanel />}
+                {showWidgetPanel && <AddWidgetPanel loadWidget={loadWidget}/>}
             </div>
         </>
     );
