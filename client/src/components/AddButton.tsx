@@ -2,9 +2,10 @@ import { Plus } from "lucide-react";
 import "./AddButton.css";
 import { useState } from "react"
 import AddWidgetPanel from "./AddWidgetPanel";
+import type { WidgetType } from "../types/widget";
 
 type AddButtonProps = {
-    loadWidget: (widgetName: string) => void;
+    loadWidget: (widgetName: WidgetType) => void;
 };
 
 function AddButton({ loadWidget }: AddButtonProps){

@@ -1,6 +1,5 @@
 import "./WeatherWidget.css"
 
-
 export default function weatherWidget (){
     return(
         <div className="weather-widget">

@@ -1,6 +1,15 @@
 {
-    
+"type":"module",
+"scripts": {
+    "dev": "node --env-file=.env --import=tsx src/server.ts"
+},  
 "devDependencies": {
+    
+    
+"@types/node": "^26.6.3",
+    
+    
+"tsx": "^4.23.15",
     
     
 "typescript": "^7.0.2"

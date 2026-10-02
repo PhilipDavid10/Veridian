@@ -1,0 +1,37 @@
+.widget-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 14rem;
+    height: 14rem;
+    background-color: #F1F5F9;
+    
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.widget-container-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.widget-settings{
+    width: 1rem;
+    height: 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-content{
+    display: flex;
+    flex: 1;
+}

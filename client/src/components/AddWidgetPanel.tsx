@@ -1,40 +1,26 @@
-import { Cloud, ListTodo } from "lucide-react";
+import { widgetDefintions} from "../features/widgets/widgetDefintions"
+import type { WidgetType } from "../types/widget";
 import "./AddWidgetPanel.css"
 
 type AddWidgetPanelProps = {
-    loadWidget: (widgetName: string) => void;
+    loadWidget: (widgetName: WidgetType) => void;
 };
 
 export default function AddWidgetPanel({ loadWidget} : AddWidgetPanelProps){
-
-    const widgetOptions = [
-        {
-            name: "weather",
-            description: "Displays the current weather",
-            icon: Cloud
-        },
-        {
-            name: "tasks",
-            description: "View your tasks",
-            icon: ListTodo
-        }
-
-    ]
 
     return(
         <>
             <div className="widget-panel">
                 <h3> Add Widget </h3>
-                {widgetOptions.map(option => {
+                {widgetDefintions.map(widget => {
                     return(
-                        <>
-                            <button className="widget-option" onClick={() => loadWidget(option.name)}>
-                                <div className="widget-header">
-                                    <option.icon className="widget-icon"/>
-                                    <span> {option.name} </span>
-                                </div>
-                            </button> 
-                        </>
+
+                        <button key = {widget.type} className="widget-option" onClick={() => loadWidget(widget.type)}>
+                            <div className="widget-button">
+                                <widget.icon className="widget-icon"/>
+                                <span> {widget.type} </span>
+                            </div>
+                        </button> 
                     )
                 })}
             </div>
