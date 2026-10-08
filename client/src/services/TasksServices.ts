@@ -1,4 +1,4 @@
-type Task = {
+export type Task = {
     id: string;
     title: string;
 }
@@ -16,5 +16,22 @@ export async function getTasks(){
     }
 
     const result : TaskResponse = await response.json();
+    return result;
+}
+
+export async function createTask(title: string){
+    const response = await fetch("/api/tasks",{
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify({title})
+    })
+
+    if(!response.ok){
+        throw new Error(`response error: ${response.status}`);
+    }
+
+    const result = await response.json();
     return result;
 }

@@ -1,29 +1,26 @@
-import { Cloud, ListTodo } from "lucide-react"
-import getDayOfTheWeek from "../../utils/date"
-import type { WidgetType } from "../../types/widget"
+import { ListTodo, Cloud } from "lucide-react";
 import type { weatherWidgetSettings, tasksWidgetSettings } from "../../types/widget";
+
+type WidgetSize = {
+    width: number,
+    height: number
+}
 
 type weatherWidgetDefintion = {
     type: "weather";
+    name: "weather";
     icon: typeof Cloud;
-    location: string;
-    temperature: string;
-    weatherCondition: string;
-    settings: weatherWidgetSettings;
+    defaultSize: WidgetSize,
+    defaultSettings: weatherWidgetSettings;
 };
 
 type TasksWidgetDefintion = {
     type: "tasks";
+    name: "tasks";
     icon: typeof ListTodo;
-    title: string;
-    taskCount: number;
-    tasks: {
-        title: string,
-        completed: boolean;
-    }[];
-    settings: tasksWidgetSettings;
+    defaultSize: WidgetSize,
+    defaultSettings: tasksWidgetSettings;
 }
-
 type widgetDefintion = 
         | weatherWidgetDefintion
         | TasksWidgetDefintion
@@ -32,11 +29,13 @@ type widgetDefintion =
 export const widgetDefintions: widgetDefintion[] = [
         {
             type: "weather",
+            name: "weather",
             icon: Cloud,
-            location: getDayOfTheWeek(),
-            temperature: "22°C",
-            weatherCondition: "Partially Cloudy",
-            settings: {
+            defaultSize: {
+                width: 2,
+                height: 1
+            },
+            defaultSettings: {
                 showLocation: true,
                 showTemperature: true,
                 showWeatherCondition: true,
@@ -44,24 +43,13 @@ export const widgetDefintions: widgetDefintion[] = [
         },
         {
             type: "tasks",
-            title: "To Do List Tasks",
+            name: "tasks",
             icon: ListTodo,
-            taskCount: 3,
-            tasks: [
-                {
-                    title: "finish algebra homework",
-                    completed: false
-                },
-                {
-                    title: "go shopping",
-                    completed: false
-                },
-                {
-                    title: "Do the Laundry",
-                    completed: true
-                }
-            ],
-            settings: {
+            defaultSize: {
+                width: 1,
+                height: 1
+            },
+            defaultSettings: {
                 showTaskCount: true,
                 showCompleted: true,
             }

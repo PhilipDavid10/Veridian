@@ -19,6 +19,7 @@
 
 .widget-area{
     display: grid;
-    grid-template-columns: repeat(auto-fit,14rem);
-    gap: 0.5rem;
+    grid-template-columns: repeat(4,12rem);
+    grid-auto-rows: 10rem;
+    gap: 1rem;
 }

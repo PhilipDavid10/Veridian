@@ -4,11 +4,15 @@ import "./WidgetContainer.css"
 
 type WidgetContainerProps = {
     children: ReactNode;
+    size: {
+        width: number,
+        height: number
+    }
 }
 
-export default function WidgetContainer({ children }: WidgetContainerProps){
+export default function WidgetContainer({ children, size }: WidgetContainerProps){
     return(
-        <div className="widget-container">
+        <div className="widget-container"  style ={{gridColumn: `span ${size.width}`, gridRow: `span ${size.height}`}}>
             <div className="widget-container-header">
                 <h3 className="widget-title">
                     Widget Title
