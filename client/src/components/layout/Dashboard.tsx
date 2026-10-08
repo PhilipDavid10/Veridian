@@ -42,8 +42,9 @@ export default function Dashboard(){
                 
                 {widgets.map((widget) => {
                     const Widget = widgetRegistry[widget.type];
+                    const definition = widgetDefintions.find((definition) => definition.type === widget.type);
                     return (
-                        <WidgetContainer key={widget.id} size={widget.size}>
+                        <WidgetContainer key={widget.id} size={widget.size} title={definition?.name ?? "widget"}>
                             <Widget />
                         </WidgetContainer>
                     )

@@ -20,6 +20,6 @@
 .widget-area{
     display: grid;
     grid-template-columns: repeat(4,12rem);
-    grid-auto-rows: 10rem;
+    grid-auto-rows: 12rem;
     gap: 1rem;
 }

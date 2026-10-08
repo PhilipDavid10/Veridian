@@ -36,11 +36,15 @@ export default function WeatherWidget (){
                 Weather
             </h3>
             <div className="weather-widget-content">
-                <p>{weather.name}, {weather.country}</p>
-                <p>{weather.temp_c}°C</p>
-                <p>{weather.condition.text}</p>
-                <img src={weather.condition.icon} alt="weather condition icon" />
-                <p>{weather.localtime}</p>
+                <div className="weather-info">
+                    <p className="weather-temperature">{weather.temp_c}°C</p>   
+                    <p className="weather-location">{weather.name}</p>
+                    <p className="weather-condition">{weather.condition.text}</p>
+                </div>
+                <div>
+                    <img src={weather.condition.icon} alt={weather.condition.text} />
+                    
+                </div>
             </div>
         </div>
     );

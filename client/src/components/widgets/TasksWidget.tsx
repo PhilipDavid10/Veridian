@@ -44,30 +44,17 @@ export default function TasksWidget(){
 
     return(
         <div className="tasks-widget">
-            <h3 className="tasks-title">
+            <h3 className="tasks-widget-title">
                 Tasks
             </h3>
+
             <div className="tasks-list">
                 {tasks.map((task) => (
-                    <p key={task.id}>
+                    <p className="task" key={task.id}>
                         {task.title}
                     </p>
                 ))}
             </div>
-            <div>
-                <button className="new-task" onClick={() => setIsCreating(true)}>
-                    New Task
-                </button>
-
-                {isCreating && (<input type="text" value={taskTitle} onChange={(event) => setTaskTitle(event.target.value)}/>)}
-            </div>
-            {isCreating && (
-                <div>
-                    <button className="add-task" onClick={() => handleCreateTask(taskTitle)}>
-                        Add Task
-                    </button>
-                </div>
-            )}
         </div>
     );
 }
